@@ -38,10 +38,10 @@ export default {
     },
 
     sendAlert() {
-      ProfileService.sendSMS(this.timeStamp).then((response) => {
-        console.log(response.status);
-        console.log(response.data);
-      });
+      ProfileService.sendSMS(this.timeStamp)
+        // console.log(response.status);
+        // console.log(response.data);
+      
       this.timeStamp = null;
     },
   },
@@ -72,7 +72,7 @@ export default {
         today.getDate();
       let time = today.getHours() + ":" + today.getMinutes();
       let dateTime = date + " " + time;
-      console.log("times compared: ", this.timeStamp == dateTime);
+      // console.log("times compared: ", this.timeStamp == dateTime);
       if (this.timeStamp == dateTime) {
         return alert("phone alert sent");
       }

@@ -50,7 +50,7 @@ export default {
     
     FoodService.getAllFoods().then((response) => {
       this.foodLog = response.data;
-      console.log('dates: ', response.data)
+      // console.log('dates: ', response.data)
       this.options.series = [
       {
         
@@ -126,7 +126,7 @@ export default {
             var strInputValue = food.date;
             let strInput2 = strInputValue.replace(/-/, "/").replace(/-/, "/")
             let foodDate = new Date(strInput2);
-            console.log('whats this date: ',foodDate)
+            // console.log('whats this date: ',foodDate)
             let sameDay = foodDate.getDate() == eachDay.getDate();
             let sameMonth = foodDate.getMonth() == eachDay.getMonth();
             let sameYear = foodDate.getFullYear() == eachDay.getFullYear();
@@ -145,8 +145,8 @@ export default {
         points.push(foodPoint);
       }
 
-      console.log('Andy DEBUT')
-      console.log(points);
+      // console.log('Andy DEBUT')
+      // console.log(points);
 
       return points;
     },

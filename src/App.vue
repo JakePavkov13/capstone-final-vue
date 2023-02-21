@@ -1,10 +1,10 @@
 <template>
   <v-app id="app">
-    <v-container class="header"><img src="~@/assets/banner.png" /></v-container>
+    <v-container class="header"><img src="@/assets/banner.png" /></v-container>
     <v-container id="navbar">
       <a id="logo-container"
         ><router-link v-bind:to="{ name: 'home' }">
-          <img id="logo" src="~@/assets/tef.jpg" /> </router-link
+          <img id="logo" v-bind:src="require('@/assets/tef.jpg')" /> </router-link
       ></a>
 
       <a
@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import profileService from "./services/ProfileService.js";
+// import profileService from "./services/ProfileService.js";
 export default {
   name: "my-teams",
   data() {
@@ -61,9 +61,10 @@ export default {
     };
   },
   created() {
-    profileService.getProfile().then((response) => {
-      this.profile = response.data;
-    });
+    this.$router.push("/home");
+    //   profileService.getProfile().then((response) => {
+  //     this.profile = response.data;
+  //   });
   },
   methods: {},
 };
